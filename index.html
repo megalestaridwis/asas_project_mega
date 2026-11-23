@@ -104,6 +104,21 @@
             </div>
         </section>
 
+        <section id="gift">
+            <h2>🎁</h2>
+            <p>Doa restu Anda merupakan hadiah terindah bagi kami. <br>Namun, jika ingin memberikan tanda kasih, dapat melalui:<br></p>
+
+            <div class="gift-card">
+                <h3 style="padding-top: 30px;">Gopay</h3>
+                <br>
+                <p id="nomorRekening">081931340850</p>
+                <br>
+                <p>lestari</p>
+
+                <button onclick="salinRekening()">Salin Nomor</button>
+            </div>
+        </section>
+
         <section id-="gallery">
             <h2>OUR MOMENTS</h2>
             <div class="foto-galeri">
@@ -156,12 +171,15 @@
         <footer>&copy El Rumi & Syifa Hadju</footer>
     </main>
 
-    <audio>
-        <source src="musik.mp3" alt="musik/mpeg">
+    <audio id="musik" loop>
+        <source src="musik.mp3" alt="audio/mpeg">
     </audio>
 
     <button id="btnMusik">
         Putar Musik
     </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
 </body>
 </html>

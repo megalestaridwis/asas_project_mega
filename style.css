@@ -27,11 +27,16 @@ section {
 
 #opening {
     height: 100vh;
+    transition: 1s;
     background: linear-gradient(#0005, #0005), url(Images/daun.png) center/cover;
     justify-content: center;
     align-items: center;
     display: flex;
     color: white;
+}
+
+#opening.turun {
+    transform: translateY(-100%);
 }
 
 #opening h1 {
@@ -52,7 +57,7 @@ button {
 }
 
 #isiUndangan {
-
+    display: none;
 }
 
 #home, #acara, #rsvp, #ourWords {
@@ -153,13 +158,47 @@ footer {
     font-size: 30px;
 }
 
+#gift {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.gift-card {
+    background: #eeeee4;
+    max-width: 350px;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+
+.gift-card button {
+    background: #687052;
+    color: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
 @media (max-width: 768px) {
-    opening h1 {
+    #opening h1 {
         font-size: 32px;
     }
 
     .profile, .foto-galeri {
         flex-direction: column;
         align-items: center;
+    }
+
+    .acara-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .kata-mempelai{
+        flex-direction: column;
+    }
+
+    .kata-mempelai img {
+        width: 180px;
+        height: 180px;
     }
 }

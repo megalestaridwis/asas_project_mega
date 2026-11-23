@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Wedding</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #eeeee4;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #687052;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #687052;
+            padding: 12px;
+        }
+
+        th {
+            background: #687052;
+            color: white;
+        }
+
+        a {
+            background: #687052;
+            color: white;
+            padding: 7px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Daftar Undangan</h2>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Nama Tamu</th>
+            <th>WhatsApp</th>
+        </tr>
+        <tbody id="listTamu"></tbody>
+    </table>
+
+    <script>
+        fetch("data-tamu.csv")
+        .then(response => response.text())
+        .then(csv => {
+            csv.trim().split("\n").slice(1).forEach(row => {
+                let [id, nama, instansi, kategori, nomor] =
+                    row.match(/(".*?"|[^,]+)/g)
+                    .map(x => x.replace(/"/g, "").trim());
+
+                let link = new URL("index.html", location.href);
+                link.searchParams.set("to", nama);
+
+                let pesan = `Yth. ${nama},
+
+                    Dengan hormat, kami mengundang Anda untuk hadir dalam acara pernikahan kami.
+
+                    Silakan buka undangan berikut:
+                    ${link}
+
+                    Terima kasih.`;
+
+                document.getElementById("listTamu").innerHTML += `
+                    <tr>
+                        <td>${id}</td>
+                        <td>${nama}</td>
+                        <td>
+                            <a href="https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}" target="_blank">
+                                WhatsApp
+                            </a>
+                        </td>
+                    </tr>`;
+            });
+        })
+        .catch(error => alert("Gagal memuat data tamu!"));
+    </script>
+
+</body>
+</html>
