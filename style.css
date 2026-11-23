@@ -21,6 +21,11 @@ h1, h2, h3 {
     color: #687052;
 }
 
-#opening {
+section {
+    padding: 60px 30px;
+}
 
+#opening {
+    height: 100vh;
+    background: linear-gradient(#0005, #0005), url(Images/daun.png) center/cover;
 }
