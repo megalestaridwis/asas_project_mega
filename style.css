@@ -28,4 +28,138 @@ section {
 #opening {
     height: 100vh;
     background: linear-gradient(#0005, #0005), url(Images/daun.png) center/cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+}
+
+#opening h1 {
+    color: white;
+    font-size: 45px;
+}
+.cover-content {
+    padding: 30px;
+}
+
+button {
+    padding: 14px 27px;
+    border: none;
+    border-radius: 25px;
+    background:  #727b58;
+    color: white;
+    cursor: pointer;
+}
+
+#isiUndangan {
+
+}
+
+#home, #acara, #rsvp, #ourWords {
+    background: #eeeee4;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.profile, .foto-galeri, .acara-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 30px;
+}
+
+.profile img {
+    width: 680px;
+    height: 780px;
+    object-fit: cover;
+}
+
+.foto-galeri img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.acara-card {
+    background: white;
+    padding: 25px;
+    width: 380px;
+    border-radius: 25px;
+    text-align: justify;
+}
+
+.maps {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+}
+
+#formRSVP {
+    background: white;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 15px;
+    text-align: left;
+}
+
+input, select, textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px; 
+}
+
+footer {
+    background:#687052;
+    color: white;
+    padding: 30px;
+}
+
+#btnMusik {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.kata-mempelai {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 750px;
+    text-align: left;
+    margin: 50px auto;
+}
+
+.kata-mempelai img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.kata-mempelai h3 {
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    opening h1 {
+        font-size: 32px;
+    }
+
+    .profile, .foto-galeri {
+        flex-direction: column;
+        align-items: center;
+    }
 }
