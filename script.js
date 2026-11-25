@@ -13,8 +13,6 @@ document.getElementById("btnOpen").onclick = function() {
         document.getElementById("opening").style.display = "none";
         document.getElementById("isiUndangan").style.display = "block";
         document.getElementById("musik").play();
-
-        mulaiScroll();
     }, 1000);
     
 }
@@ -48,12 +46,6 @@ document.getElementById("formRSVP").onsubmit = async function(e) {
     }
     
 };
-
-function mulaiScroll() {
-    setInterval(() => {
-        window.scrollBy(0, 1);
-    }, 100);
-}
 
 function salinRekening() {
     const nomor = document.getElementById("nomorRekening").innerText;
